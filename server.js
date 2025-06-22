@@ -7,7 +7,7 @@ import Game from "./models/Game.js";
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(cors());
@@ -89,5 +89,4 @@ app.patch("/games/:id", async (req, res) => {
   }
 });
 
-// localhost:3000/games/
 app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
